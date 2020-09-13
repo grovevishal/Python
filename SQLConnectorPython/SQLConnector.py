@@ -1,12 +1,15 @@
 import mysql.connector
 
 ## Create SQL Connection ##
-mydb = mysql.connector.connect(
-  host="localhost",
-  user="root",
-  password="Gr0v3v!shal",
-  database="pos"
-)
+try:
+  mydb = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="Gr0v3v!shal",
+    database="pos"
+  )
+except mysql.connector.Error as err:
+  print("ERROR OCCURED - More Details : {}".format(err))
 '''
 ## Create Database ##
 mycursor = mydb.cursor()
